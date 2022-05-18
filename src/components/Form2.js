@@ -23,6 +23,7 @@ function Form2() {
           const openai = new OpenAIApi(configuration);
           delete openai["axios"].defaults.headers["User-Agent"];
 
+          console.log(process.env)
           console.log(process.env.REACT_APP_API_KEY)
           
           openai.createCompletion("text-curie-001", {

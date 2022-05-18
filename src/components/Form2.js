@@ -15,6 +15,7 @@ function Form2() {
     
     let handleSubmit = (event) => {
         event.preventDefault();
+        console.log("Hello!")
     
         const configuration = new Configuration({
             apiKey: process.env.REACT_APP_API_KEY,
@@ -68,7 +69,7 @@ function Form2() {
 
         <br />
         <br />
-        <h2 style={{color: "white", marginLeft: '25%'}}>Responses</h2>
+        <h2 style={{color: "white", marginLeft: '25%'}}>Responses:</h2>
         
         { responses.length > 0 ? responses.map((response) => <Response key={response.id} response={response}/>) : <p style={{color: 'white', marginLeft: '25%'}}> Waiting for you to try submit a prompt! 🥱</p>}
 

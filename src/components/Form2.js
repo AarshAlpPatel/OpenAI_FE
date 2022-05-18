@@ -15,16 +15,12 @@ function Form2() {
     
     let handleSubmit = (event) => {
         event.preventDefault();
-        console.log("Hello!")
     
         const configuration = new Configuration({
             apiKey: process.env.REACT_APP_API_KEY,
           });
           const openai = new OpenAIApi(configuration);
           delete openai["axios"].defaults.headers["User-Agent"];
-
-          console.log(process.env)
-          console.log(process.env.REACT_APP_API_KEY)
           
           openai.createCompletion("text-curie-001", {
             prompt: currentPrompt,
@@ -40,7 +36,6 @@ function Form2() {
             console.log(newResponse)  
             setResponses(oldResponses => [newResponse, ...oldResponses])
             setId(id + 1)
-            console.log(responses)
           })
     }
 
